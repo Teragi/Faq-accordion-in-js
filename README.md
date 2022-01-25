@@ -1,2 +1,5 @@
-# faq-accordion-card-frontend-mentor
-My solution for faq accordion card challenge from frontend mentor website.
+# FAQ accordion card challenge 
+We had to make a faq accordion card in Javascript by following the Frontend Mentor site.
+https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam/hub/faq-accordion-card--zAUZLeTV
+
+Here is my solution.
