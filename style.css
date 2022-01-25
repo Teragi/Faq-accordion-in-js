@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  background: linear-gradient(to top, #6565e7, #af67e9);
+}
+
+.container {
+  width: 90%;
+  min-height: 90vh;
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+
+/* Faq card */
+.faq-card {
+  width: 100%;
+  min-height: 72vh;
+  padding: 0 2em;
+  background-color: #fff;
+  border-radius: 2em;
+}
+
+/* image section */
+.image-section {
+  position: relative;
+  width: 100%;
+  min-height: 24vh;
+}
+.image-section .img:first-child {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../../images/bg-pattern-mobile.svg") no-repeat center;
+  background-size: 18em;
+  top: -2.5em;
+}
+.image-section .img:last-child {
+  position: absolute;
+  width: 100%;
+  height: 103%;
+  background: url("../../images/illustration-woman-online-mobile.svg") no-repeat center;
+  background-size: 18em;
+  top: -8em;
+}
+
+/* Text section */
+.text-section {
+  width: 100%;
+  height: fit-content;
+}
+.text-section h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: #1d1e35;
+}
+.text-section .questions-container .faq {
+  border-bottom: 1px solid #e7e7e9;
+  cursor: pointer;
+}
+.text-section .questions-container .faq .question {
+  display: flex;
+          justify-content: space-between;
+          align-items: center;
+  padding: 1.3em 0 1.3em 0;
+}
+.text-section .questions-container .faq .question span {
+  font-size: 0.75rem;
+  color: #4a4b5e;
+  letter-spacing: 0.2px;
+}
+.text-section .questions-container .faq .question span:hover {
+  color: #f47c57;
+}
+.text-section .questions-container .faq .question img {
+  width: 10px;
+  height: 7px;
+  transition: transform 0.5s ease;
+}
+.text-section .questions-container .faq .answer {
+  overflow: hidden;
+  max-height: 0;
+  max-width: 87%;
+  line-height: 1.5;
+  font-size: 0.75rem;
+  color: #787887;
+  transition: max-height 0.5s ease;
+}
+.text-section .questions-container .faq[aria-expanded=true] .question span {
+  color: #1d1e35;
+  font-weight: 700;
+}
+
+.text-section .questions-container .faq[aria-expanded=true] .answer {
+  max-height: 5em;
+  margin-bottom: 1em;
+  animation: fade 0.7s ease-in-out;
+}
+
+/* Responsive */
+@media (min-width: 991px) {
+  .text-section {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    height: 100%;
+    padding: 7em 7em 7em 0;
+  }
+  .text-section h1 {
+    text-align: left;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .text-section .questions-container {
+    margin-top: 2em;
+  }
+  .text-section .questions-container .question {
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+  }
+}
+@media (min-width: 991px) {
+  .faq-card {
+    width: 90%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+}
+@media (min-width: 1300px) {
+  .faq-card {
+    width: 75%;
+  }
+}
+@media (min-width: 991px) {
+  .image-section {
+    height: 100%;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    position: relative;
+    background: url("../../images/bg-pattern-desktop.svg") no-repeat -526px -237px;
+    background-size: 900px;
+  }
+  .image-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../images/illustration-woman-online-desktop.svg") no-repeat -68px 70px;
+    background-size: 439px;
+    animation: up_down 2s ease-in-out infinite;
+  }
+  .image-section::after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: -34px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: url("../../images/illustration-box-desktop.svg") no-repeat -40px 186px;
+    background-size: 153px;
+    animation: up_down 2s ease-in-out infinite;
+  }
+  .image-section .img:first-child,
+.image-section .img:last-child {
+    display: none;
+  }
+}
